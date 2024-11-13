@@ -16,24 +16,50 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
         ),
-        home: const Center(
-          child: Column(
-            children: [
-              Text(
-                "hello world",
-                style: TextStyle(color: Colors.yellow, fontSize: 40),
-              ),
-              Text(
-                "hello world",
-                style: TextStyle(color: Colors.yellow, fontSize: 40),
-              ),
-            ],
-          ),
-        )
+        home: const MyHomePage()
+        // home: const Center(
+        //   child: Column(
+        //     children: [
+        //       Text(
+        //         "hello world",
+        //         style: TextStyle(color: Colors.yellow, fontSize: 40),
+        //       ),
+        //       Text(
+        //         "hello world",
+        //         style: TextStyle(color: Colors.yellow, fontSize: 40),
+        //       ),
+        //     ],
+        //   ),
+        // )
         // home: const MyHomePage(title: 'Flutter Demo Home Page'),
         );
   }
 }
+
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Column(
+        children: [
+          Text(
+            "hello world",
+            style: TextStyle(color: Colors.yellow, fontSize: 40),
+          ),
+          Text(
+            "hello world",
+            style: TextStyle(color: Colors.yellow, fontSize: 40),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
 
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key, required this.title});
