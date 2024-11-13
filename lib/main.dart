@@ -41,20 +41,27 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        children: [
-          Text(
-            "hello world",
-            style: TextStyle(color: Colors.yellow, fontSize: 40),
+    return Scaffold(
+        // Scaffoldで囲んどいたら、AppBarとか使える
+        appBar: AppBar(
+          title: const Text("hello world"),
+          backgroundColor: Colors.red, // AppBarの背景色　おおもじのColors.を使う
+          centerTitle: true, // 中央寄せ
+        ),
+        body: const Center(
+          child: Column(
+            children: [
+              Text(
+                "hello world",
+                style: TextStyle(color: Colors.yellow, fontSize: 40),
+              ),
+              Text(
+                "hello world",
+                style: TextStyle(color: Colors.yellow, fontSize: 40),
+              ),
+            ],
           ),
-          Text(
-            "hello world",
-            style: TextStyle(color: Colors.yellow, fontSize: 40),
-          ),
-        ],
-      ),
-    );
+        ));
   }
 }
 
