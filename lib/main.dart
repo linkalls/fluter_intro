@@ -59,9 +59,67 @@ class MyHomePage extends StatelessWidget {
                 "hello world",
                 style: TextStyle(color: Colors.yellow, fontSize: 40),
               ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     print(greeting("poteto"));
+              //   },
+              //   child: const Text("ボタン"),
+              // ),
+              MyPageStateFull(title: "ボタンをクリックしてみてね"),
             ],
           ),
         ));
+  }
+}
+
+String buttonClick() {
+  return "ボタンがクリックされたよ";
+}
+
+String greeting(String name) {
+  return "hello $name";
+}
+
+class MyPageStateFull extends StatefulWidget {
+  const MyPageStateFull({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyPageStateFull> createState() => _MyPageStateFullState();
+}
+
+class _MyPageStateFullState extends State<MyPageStateFull> {
+  var _message = "";
+
+  @override
+// ここで初期化しないとうまくいかない
+  void initState() {
+    super.initState();
+    _message = widget.title;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: Column(
+          children: [
+            Text(_message),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _message = buttonClick();
+                });
+              },
+              child: const Text("ボタン"),
+            ),
+          ],
+        ),
+        color: Colors.blue,
+      ),
+    );
   }
 }
 
